@@ -267,7 +267,8 @@ body {
 
 .catalogFooter img {
     position: absolute;
-    width: 428px;
+    width: 90%;
+    left: 5%;
     height: 353px;
     z-index: 10;
 }
