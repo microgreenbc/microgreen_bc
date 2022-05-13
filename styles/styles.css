@@ -35,9 +35,9 @@ body {
 
 .headLine {
     position: relative;
-    width: 174px;
+    width: 42%;
     height: 0px;
-    left: 126px;
+    left: 28%;
     top: 0;
     border: 1px solid rgb(255 252 252 / 5%);
     background: rgb(255 252 252 / 27%);
@@ -57,7 +57,6 @@ body {
     height: 717px;
     left: 0px;
     top: 209px;
-
     background: url("../media/back.png");
 }
 
@@ -79,8 +78,9 @@ body {
     font-size: 20px;
     line-height: 24px;
     margin: 0;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
+
 
 .main-container {
     position: relative;
@@ -135,11 +135,7 @@ body {
     height: 60px;
 }
 
-.footer {
-    text-align: center;
-}
-
-.footer {
+.footer, .infoFoter {
     position: relative;
     color: white;
     text-align: center;
@@ -148,9 +144,10 @@ body {
     margin-top: 50px;
     left: 0;
     font-size: small;
+    z-index: 40;
 }
 
-.footer a, .catalogFooter a{
+.footer a, .catalogFooter a, .infoFoter a{
     text-decoration: none;
     color: #cdcbcb;
     padding: 2px;
@@ -160,7 +157,7 @@ body {
     color: #5f5e5e;
 }
 
-.catalog {
+.catalog, .info {
     background: black;
     display: flex;
     flex-direction: column;
@@ -198,7 +195,7 @@ body {
     margin-bottom: 15px;
     margin-top: 15px;
     min-width: 0;
-    width: 375px;
+    width: 88%;
     max-height: 375px;
     border-radius: 20px;
 }
@@ -280,8 +277,110 @@ body {
     top: 80%;
 }
 
+.infoBlockOne{
+    position: relative;
+    width: 87%;
+    height: 73px;
+    left: 6%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #42FF00;
+    margin-bottom: 28px;
+    z-index: 30;
+}
+
+.infoBlockTwo {
+    position: relative;
+    width: 94%;
+    height: 142px;
+    left: 3%;
+
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #42FF00;
+    margin-bottom: 28px;
+    z-index: 30;
+}
+
+.infoBlockTwoBC {
+    
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: blur(4px);
+    transform: rotate(-90deg);
+    z-index: 30;
+}
+
+.infoBlockThree, .infoBlockFour {
+    position: relative;
+    width: 88%;
+    height: 497px;
+    left: 6%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    z-index: 30;
+}
+
+.infoBlockThree h3, .infoBlockFour h3 {
+    margin-bottom: 15px;
+}
+
+.infoBlockFour {
+    text-align: center;
+    margin-top: 30px;
+    z-index: 30;
+    height: auto;
+}
+
+.infoBlockFour li {
+    margin-bottom: 15px;
+}
+
+.infoBlockFour li::marker {
+    text-align: end !important;
+    text-align-last: end !important;
+}
+
+.infoBlockFourBg {
+    position: absolute;
+    display: flex;
+
+    position: absolute;
+    width: 100%;
+    height: 1780px;
+
+    background: url("../media/infoBg.png");
+    z-index: 20;
+}
 
 #catalog {
     display: none;
+}
+
+#info {
+    display: none;
+}
+
+@media only screen and (max-width: 378px) {
+    .producTitle, .productPrice {
+        font-size: 18px;
+    }
+    .productDescription {
+        font-size: 14px;
+    }
 }
 
