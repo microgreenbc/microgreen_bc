@@ -250,28 +250,29 @@
         </div>
     </div>
     <div class="b-popup" id="pop">
-        <div class="b-popup-content">
-            <p>УПС.....ТЕХНІЧНІ ШОКОЛАДКИ<br>На жаль, на даний момент зробити замовлення можливо лише через соціальні мережі та по телефону</p>
-            <img src="media/problem.png" width="60%" height="60%" alt="eror">
+        <div class="b-popup-content" style="width: 41%; height: 220px;">
+            <p id = "#cont">УПС.....ТЕХНІЧНІ ШОКОЛАДКИ<br>На жаль, на даний момент зробити замовлення можливо лише через соціальні мережі та по телефону</p>
+            <img src="media/problem.png" width="30%" height="30%" alt="eror" id = "#cont2">
             <br>
-            <a href="javascript:PopUpHide()">OK</a>
+            <a href="javascript:PopUpHide()" id = "#cont3">OK</a>
         </div>
     </div>
 
     <script src = "js/aos.js"></script>
     <script src = "js/interective.js"></script>
     <script src = "js/jquery-3.6.0.min.js"></script>
+    <script src = "js/anime.min.js"></script>
 
     <script>
-      $('#order').click(PopUpShow);
+    $('#order').click(PopUpShow);
       
-      function PopUpShow() {
+    function PopUpShow() {
         $("#pop").show();
-      }
+    }
       
-      function PopUpHide() {
+    function PopUpHide() {
         $("#pop").hide();
-      }
+    }
     </script>
 
     <script>
@@ -341,15 +342,28 @@
   
 
          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-        offset: 50, // offset (in px) from the original trigger point
-        delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 400, // values from 0 to 3000, with step 50ms
+        offset: 70, // offset (in px) from the original trigger point
+        delay: 100, // values from 0 to 3000, with step 50ms
+        duration: 800, // values from 0 to 3000, with step 50ms
         easing: 'ease', // default easing for AOS animations
         once: false, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
     });
+    </script>
+
+    <script>
+        var ttt = anime ({
+            targets: ['#cont', '#cont2', '#cont3', ".b-popup-content"],
+            scale: {
+                value: 1.8,
+                easing: 'easeInOutQuart',
+                delay: 0,
+                duration: 500
+            },
+        });
+        document.querySelector('#order').onclick = ttt.play;
     </script>
 </body>
 </html>
