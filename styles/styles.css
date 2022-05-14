@@ -369,7 +369,7 @@ body {
     text-align: center;
 }
 .b-popup .b-popup-content{
-    margin: 10% auto 0px auto;
+    margin: 30% auto 0px auto;
     width: 82%;
     padding:20px;
     background-color: #ffffff;
@@ -377,8 +377,8 @@ body {
     box-shadow: 0px 0px 10px #000;
     font-style: normal;
     font-weight: 100;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 12px;
+    line-height: 15px;
 }
 
 .b-popup a {
