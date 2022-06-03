@@ -425,6 +425,7 @@ body {
     flex-direction: row;
     background: rgb(0, 0, 0);
     margin-bottom: -20px;
+    margin-top: 20px;
     justify-content: space-evenly;
 }
 
