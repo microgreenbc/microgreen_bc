@@ -506,5 +506,8 @@ body {
     .navigationItem p {
         font-size: 35px;
     }
+    .btn-5 {
+        font-size: 18px;
+    }
 }
 
