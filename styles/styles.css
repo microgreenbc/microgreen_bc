@@ -15,10 +15,15 @@
     font-display: swap;
 }
 
+
+
 body {
     /*background: url("../media/zel.png") center center;*/
     background-color: black;
     font-family: Inter-Thin;
+    --right: 60.3%;
+    --left: 12.3%;
+    --size: 27%;
 }
 
 .header {
@@ -404,6 +409,93 @@ body {
     display: none;
 }
 
+.navigationBarWrapper {
+    overflow: hidden;
+    position: sticky;
+    box-shadow: 1px -1px 0px 4px rgb(255 255 255);
+    top:3px;
+    z-index: 10;
+  }
+
+.navigationBar {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: rgb(0, 0, 0);
+    margin-bottom: -20px;
+    justify-content: space-evenly;
+}
+
+/* 5 */
+.btn-5 {
+    width: 30%;
+    height: 100%;
+    display: block;
+    font-family: Inter-Regular;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: rgb(0, 0, 0);
+    color: white;
+}
+.btn-5:hover {
+    color: #ededed;
+    background: transparent;
+    box-shadow:none;
+}
+
+.btn-5:before,
+.btn-5:after{
+    content:'';
+    position: absolute;
+    top:0;
+    right: var(--right);
+    height:2px;
+    width:0;
+    background: #ffffff;
+    box-shadow:
+     -1px -1px 5px 0px #fff,
+     7px 7px 20px 0px #0003,
+     4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+.btn-5:after{
+    right:inherit;
+    top:inherit;
+    left: var(--left);
+    bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+    width: var(--size);
+    transition:800ms ease all;
+}
+
+#navButon1 {
+    order: 1;
+}
+
+#navButon2 {
+    order: 2;
+}
+
+#navButon3 {
+    order:3;
+}
+#nav {
+    display: none;
+}
+/*
+:root {
+    --right: 60.3%;
+    --left: 12.3%;
+    --size: 27%;
+}
+*/
 @media only screen and (max-width: 378px) {
     .producTitle, .productPrice {
         font-size: 18px;
