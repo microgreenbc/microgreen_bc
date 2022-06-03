@@ -23,6 +23,16 @@
             <p id = "backk" class = "aftTitle">Біла Церква</p>
         </div>
     </div>
+    <div class = "navigationBar" id = "nav">
+        <div id = "back" style="display: flex; align-items: center; width: 10%; justify-content: center">
+            <img  src = "media/free-icon-arrow-6529018.png" alt="none" height="15px" width="15px">
+        </div>
+        <div style="display: flex; justify-content: space-evenly; width: 90%;">
+            <button class="btn-5" id = "navButon1">Ціни</button>
+            <button class="btn-5" id = "navButon2">Інфо</button>
+            <button class="btn-5" id = "navButon3">Замовити</button>
+        </div>
+    </div>
     <div data-aos="zoom-in" class="main-container" id = "content">
         <div class="navigationItem" id = "prices">
             <p>ЦІНИ</p>
@@ -263,6 +273,8 @@
     <script src = "js/jquery-3.6.0.min.js"></script>
     <script src = "js/anime.min.js"></script>
 
+
+
     <script>
     $('#order').click(PopUpShow);
       
@@ -282,6 +294,33 @@
     $('#prices').click(showCatalog);
     $('#infoorm').click(showInfo);
     $('#backk').click(back);
+    $('#back').click(back);
+
+    $('#navButon1').click(function () {
+        $('body').css('--left', '12.3%');
+        $('body').css('--right', '60.3%');
+        if(selection == 1) return;
+        else if (selection == 2) {
+            $('#info').hide();
+        }
+        showCatalog();
+    });
+
+    $('#navButon2').click(function () {
+        $('body').css('--left', '41.5%');
+        $('body').css('--right', '31.3%');
+        if(selection == 2) return;
+        else if (selection == 1) {
+            $('.catalog').hide();
+        }
+        showInfo();
+    });
+
+    $('#navButon3').click(function () {
+        $('body').css('--left', '70.8%');
+        $('body').css('--right', '2%');
+        PopUpShow();
+    });
 
     function refreshScrollAnimation() {
         AOS.refresh();
@@ -296,6 +335,7 @@
     }
 
     function showMainpage() {
+        $('#nav').hide();
         $('#content').show();
         $('#contacts').show();
         $('#footer').show();
@@ -303,22 +343,26 @@
 
     function showCatalog() {
         fadeMainpage();
-        $('.catalog').css('display', 'flex');
+        $('#nav').css('display', 'flex');
+        $('.catalog').show();
         refreshScrollAnimation();
         selection = 1;
     }
+
     function showInfo() {
         fadeMainpage();
-        $('#info').css('display', 'flex');
+        $('#nav').css('display', 'flex');
+        $('#info').show();
         refreshScrollAnimation();
         selection = 2;
     }
+
     function back() {
         if(selection === 1) {
-            $('.catalog').css('display', 'none');
+            $('.catalog').hide();
             showMainpage(); 
         } else if(selection === 2) {
-            $('#info').css('display', 'none');
+            $('#info').hide();
             showMainpage();
         }
          else {
